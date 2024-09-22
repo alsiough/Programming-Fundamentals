@@ -9,4 +9,4 @@
 *.dylib
 main
 .vscode
-
+*.sln

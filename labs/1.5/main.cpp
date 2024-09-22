@@ -24,9 +24,14 @@ int main() {
     }
 
     {
-        int a = 0;
+        int a = 10;
+        int b = 20;
+        int c = 30;
+        int d = 40;
 
-        bool res = !a;
+        // <УЛО1> (<УЛО2> (A<ОВ1>B) <БЛО> (<УЛО3> (C<ОВ2>D)))
+        //  empty (  !    (a == b)    and   (   !   (c != d)))
+        bool res = (!(a == b) and (!(c != d)));
         cout << "res: " << boolalpha << res << endl;
     }
 
