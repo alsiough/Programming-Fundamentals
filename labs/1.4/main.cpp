@@ -1,118 +1,43 @@
 /**
  * Done by:
- * Student Name: Severyn Kotyhoroshko
- * Student Group: 123
+ * Student Name: Serhiienko Oleksandr
+ * Student Group: 121
  * Lab 1.4
  */
 
 #include <iostream>
-
 using namespace std;
 
 int main() {
-    // Comment to local scope 1
-    {
-        int num = 10;
-        int* ptr = &num; // ptr now holds the address of num
 
-        cout << "Value of num: " << num << endl;        // Outputs: 10
-        cout << "Address of num: " << ptr << endl;      // Outputs the memory address of num
-        cout << "Value at the address stored in ptr: " << *ptr << endl; // Outputs: 10
-
-        num++;
-        cout << num << endl;
-
-        // delete ptr;         // Deallocates the memory
-        ptr = nullptr;         // Good practice to avoid dangling ptrs
-        cout << "Nullified ptr: " << ptr << endl;
-    }
-
-    // Comment to local scope 2
-    {
-        cout << "Pointer Arithmetic" << endl;
-        int arr[] = {1, 2, 3, 4, 5};
-
-        cout << "sizeof arr = " << sizeof(arr) << endl;
-        int* ptr = arr;         // Points to the first element of the array
-
-        const int firstEl = arr[0];
-
-        cout << arr[0] << endl;   // Outputs: 1
-        cout << ptr << endl;   // Outputs: Address
-        cout << *ptr << endl;   // Outputs: 1
-        ptr++;                  // Moves to the next element
-        cout << *ptr << endl;   // Outputs: 2
-
-        ptr = nullptr;         // Good practice to avoid dangling ptrs
-        cout << "sizeof arr = " << sizeof(arr) << endl;
-    }
-
-    // Comment to local scope 3
-    {
-        cout << "Dynamic Memory Allocation for INT" << endl;
-        int* ptr = new int;    // Allocates memory for a single integer
-        *ptr = 20;             // Sets the value of the allocated memory
-
-        cout << *ptr << endl;  // Outputs: 20
-
-        delete ptr;            // Deallocates the memory
-        ptr = nullptr;         // Good practice to avoid dangling ptrs
-    }
+    unsigned short us = 120;
+    int i = -4986;
+    float f = 234.987775f;
+    double d = 3.4e-55;
 
 
-    // Comment to local scope 4
-    {
-        cout << "Dynamic Memory Allocation for ARR" << endl;
-        int* arr = new int[5]; // Allocates memory for an array of 5 integers
+    unsigned short *us_ptr = &us;
+    int *i_ptr = &i;
+    float *f_ptr = &f;
+    double *d_ptr = &d;
 
-        cout << "sizeof *arr = " << sizeof(*arr) << endl;
-        cout << "sizeof arr = " << sizeof(arr) << endl;
 
-        cout << arr << endl;
-        for(int i = 0; i < 5; i++) {
-            arr[i] = i + 1;    // Initializes array
-        }
+    cout << "us: " << *us_ptr << endl;
+    cout << "i: " << *i_ptr << endl;
+    cout << "f: " << *f_ptr << endl;
+    cout << "d: " << *d_ptr << endl;
 
-        delete[] arr;          // Deallocates the array memory
-        arr = nullptr;
-        cout << arr << endl;
-        cout << "sizeof *arr = " << sizeof(*arr) << endl;
-        cout << "sizeof arr = " << sizeof(arr) << endl;
-    }
 
-    // Comment to local scope 5
-    {
-        cout << "Pointers to Pointers" << endl;
-        int num = 10;
-        int* ptr = &num;
-        int** ptrToPtr = &ptr;
+    cout << "unsigned short: " << sizeof(us) << " byte" << endl;
+    cout << "int: " << sizeof(i) << " byte" << endl;
+    cout << "float: " << sizeof(f) << " byte" << endl;
+    cout << "double: " << sizeof(d) << " byte" << endl;
 
-        cout << **ptrToPtr << endl; // Outputs: 10
-        ptr = nullptr;
-        ptrToPtr = nullptr;
-    }
 
-    // Comment to local scope 6
-    {
-        cout << "Variable vs. Reference" << endl;
-        int nCount = 10;
-        int &ref = nCount;
-        int* ptr = &ref;
-
-        cout << "nCount = "  << nCount << endl;  // Outputs: 10
-        cout << "ref = "  << ref << endl;  // Outputs: 10
-        cout << "*ptr = " << *ptr << endl;  // Outputs: 10
-
-        ref++;
-        cout << "nCount = "  << nCount << endl;  // Outputs: 11
-        cout << "ref = "  << ref << endl;  // Outputs: 11
-        cout << "*ptr = " << *ptr << endl;  // Outputs: 11
-
-        *ptr = 20;
-        cout << "nCount = "  << nCount << endl;  // Outputs: 10
-        cout << "ref = "  << ref << endl;  // Outputs: 20
-        cout << "*ptr = " << *ptr << endl;  // Outputs: 20
-    }
+    int new_var;
+    int *new_var_ptr = &new_var;
+    *new_var_ptr = 100;
+    cout << "value new peremennoi(hz kak na eng): " << *new_var_ptr << endl;
 
     return 0;
 }
