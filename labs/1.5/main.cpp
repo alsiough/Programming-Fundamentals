@@ -6,34 +6,32 @@
  */
 
 #include <iostream>
-#include <cmath>
-
 using namespace std;
 
 int main() {
-    {
-        int a = 10;
-        int b = 20;
-        int c = 30;
-        int d = 40;
 
-        // <УЛО1> (<УЛО2> (A<ОВ1>B) <БЛО> (<УЛО3> (C<ОВ2>D)))
-        //  empty (  !    (a == b)    ^   (   !   (c != d)))
-        bool res = (!(a == b) ^ (!(c != d)));
-        cout << "res: " << boolalpha << res << endl;
-    }
+    bool ULO1, ULO2, ULO3, BLO;
+    double A, B, C, D;
+    int ОВ1, ОВ2;
 
-    {
-        int a = 10;
-        int b = 20;
-        int c = 30;
-        int d = 40;
 
-        // <УЛО1> (<УЛО2> (A<ОВ1>B) <БЛО> (<УЛО3> (C<ОВ2>D)))
-        //  empty (  !    (a == b)    and   (   !   (c != d)))
-        bool res = (!(a == b) and (!(c != d)));
-        cout << "res: " << boolalpha << res << endl;
-    }
+    ULO1 = true;
+    ULO2 = false;
+    ULO3 = true;
+
+    A = 5.15;
+    B = 5.15;
+    C = 10;
+    D = 2.12;
+
+    ОВ1 = (A < B);
+    ОВ2 = (C <= D);
+
+
+    BLO = (ULO2 && (A < B)) || (ULO3 && (C <= D));
+
+
+    cout << "Result: " << BLO << endl;
 
     return 0;
 }
