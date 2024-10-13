@@ -34,7 +34,8 @@ int main() {
     // Get the text and shift from the user
     std::string text;
     int shift;
-
+    int a = 65;
+    char cA = char(a);
     std::cout << "Enter the text to encrypt: ";
     std::getline(std::cin, text);
 
