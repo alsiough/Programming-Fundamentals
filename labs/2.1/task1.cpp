@@ -10,10 +10,10 @@
 using namespace std;
 
 int main() {
-    // Описание переменной,  индексованого типа.
+    // index type double
     double array[10];
 
-    // Инициализация переменной выражением.
+    // initilizing
     for (int i = 0; i < 10; i++) {
         if (i % 2 == 0) {
             array[i] = 15.68 + 3 * i;
@@ -22,7 +22,6 @@ int main() {
         }
     }
 
-    // Вывод массива в обратном порядке, с 2 знаками после запятой.
     cout << "array v obratnom poryadke:" << endl;
     for (int i = 9; i >= 0; i--) {
         cout << fixed << setprecision(2) << array[i] << " ";
