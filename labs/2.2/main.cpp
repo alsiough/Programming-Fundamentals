@@ -2,7 +2,7 @@
 * Done by:
 * Student Name: Serhiienko Oleksandr
 * Student Group: 121
-* Lab 2.2
+* Lab 2.22
  */
 #include <iostream>
 #include <string>

@@ -2,7 +2,7 @@
 * Done by:
 * Student Name: Serhiienko Oleksandr
 * Student Group: 121
-* Lab 1.8
+* Lab 1.88
  */
 #include <iostream>
 using namespace std;

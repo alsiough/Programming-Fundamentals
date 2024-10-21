@@ -2,7 +2,7 @@
 * Done by:
  * Student Name: Serhiienko Oleksandr
  * Student Group: 121
- * Lab 1.7
+ * Lab 1.77
 * I don't understand what files are in the repository now, as they are not related to labs,
 * so I just wont touch them and i'll do all tasks in main.cpp
 UPD: I realized what it iss, but unfortunatly after Ive done it all
