@@ -26,7 +26,7 @@ int main() {
 
 
     cout << "+: " << endl;
-    int sum = add(operand1, operand2);
+    int sum = add(3.5, 3);
     cout << "first operand: " << operand1 << " (" << bitset<32>(operand1) << ")" << endl;
     cout << "second operand: " << operand2 << " (" << bitset<32>(operand2) << ")" << endl;
     cout << "result: " << sum << " (" << bitset<32>(sum) << ")" << endl;
