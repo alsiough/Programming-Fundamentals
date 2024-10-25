@@ -13,41 +13,39 @@
 
 using namespace std;
 
-// Function to determine the precedence of the operators
 int precedence(char c) {
     if (c == '+' || c == '-')
         return 1;
     else if (c == '*' || c == '/')
         return 2;
-    return 0; // for non-operators like parentheses or invalid characters
+    return 0;
 }
 
-// Function to check if a given character is an operator
 bool isOperator(char c) {
     return (c == '+' || c == '-' || c == '*' || c == '/');
 }
 
-// Function to convert an infix expression to postfix expression
+
 string infixToPostfix(const string &expression) {
-    stack<char> operators;  // Stack to hold operators
-    string postfix;         // Resultant postfix expression
+    stack<char> operators;
+    string postfix;
 
     for (char c : expression) {
         if (isdigit(c)) {
-            // If the character is a digit, add it to the postfix expression
+
             postfix += c;
         } else if (c == '(') {
-            // If the character is an opening parenthesis, push it to the stack
+
             operators.push(c);
         } else if (c == ')') {
-            // If the character is a closing parenthesis, pop and add to postfix until '(' is found
+
             while (!operators.empty() && operators.top() != '(') {
                 postfix += operators.top();
                 operators.pop();
             }
-            operators.pop(); // Remove the '(' from the stack
+            operators.pop();
         } else if (isOperator(c)) {
-            // If the character is an operator, handle precedence
+
             while (!operators.empty() && precedence(operators.top()) >= precedence(c)) {
                 postfix += operators.top();
                 operators.pop();
@@ -56,7 +54,7 @@ string infixToPostfix(const string &expression) {
         }
     }
 
-    // Pop all the remaining operators from the stack
+
     while (!operators.empty()) {
         postfix += operators.top();
         operators.pop();
@@ -65,7 +63,7 @@ string infixToPostfix(const string &expression) {
     return postfix;
 }
 
-// Function to perform the arithmetic operation
+
 int performOperation(char operation, int operand1, int operand2) {
     switch (operation) {
         case '+': return operand1 + operand2;
@@ -81,24 +79,21 @@ int performOperation(char operation, int operand1, int operand2) {
     }
 }
 
-// Function to evaluate a postfix expression
 int evaluatePostfix(const string &expression) {
-    stack<int> operands;  // Stack to hold operands
+    stack<int> operands;
 
     for (char c : expression) {
         if (isdigit(c)) {
-            // Push digits directly to the stack
-            operands.push(c - '0'); // Convert char to int
+            operands.push(c - '0');
         } else if (isOperator(c)) {
-            // Pop the top two operands and apply the operator
             int operand2 = operands.top(); operands.pop();
             int operand1 = operands.top(); operands.pop();
             int result = performOperation(c, operand1, operand2);
-            operands.push(result); // Push the result back onto the stack
+            operands.push(result);
         }
     }
 
-    // The final result will be the only element left in the stack
+
     return operands.top();
 }
 
