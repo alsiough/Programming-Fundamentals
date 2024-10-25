@@ -9,7 +9,6 @@
 
 using namespace std;
 
-//chatgpt tells how to use struct
 struct Student {
     string name;
     float grade;
